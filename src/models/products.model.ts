@@ -1,5 +1,3 @@
-// ./models/Product.model.ts
-
 import { Pool, ResultSetHeader } from 'mysql2/promise';
 import Product from '../interfaces/product.interface';
 
