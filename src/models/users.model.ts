@@ -15,6 +15,15 @@ export default class UserModel {
     return rows as User[];
   }
 
+  async getByUser(username: string, password: string): Promise<User[]> {
+    const result = await this.connection.execute(
+      'SELECT * FROM Trybesmith.users WHERE username = ? AND password = ?', 
+      [username, password],
+    );
+    const [rows] = result;
+    return rows as User[];
+  }
+
   async create(user: User): Promise<User> {
     const { username, vocation, level, password } = user;
     const result = await this.connection.execute<ResultSetHeader>(

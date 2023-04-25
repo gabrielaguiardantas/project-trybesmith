@@ -14,6 +14,11 @@ const addUserSchema = Joi.object({
   password: Joi.string().min(8).required().label('password'),
 });
 
+const addLoginSchema = Joi.object({
+  username: fieldSchema.label('username'),
+  password: fieldSchema.label('password'),
+});
+
 // const itemSale = Joi.object({
 //   productId: idSchema.label('productId'),
 //   quantity: idSchema.label('quantity').messages({
@@ -27,4 +32,5 @@ const addUserSchema = Joi.object({
 export default {
   addProductSchema,
   addUserSchema,
+  addLoginSchema,
 };
