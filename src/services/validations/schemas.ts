@@ -19,18 +19,16 @@ const addLoginSchema = Joi.object({
   password: fieldSchema.label('password'),
 });
 
-// const itemSale = Joi.object({
-//   productId: idSchema.label('productId'),
-//   quantity: idSchema.label('quantity').messages({
-//     'any.required': '"quantity" is required',
-//     'number.min': '"quantity" must be greater than or equal to 1',
-//   }),
-// });
-
-// const addSaleSchema = Joi.array().min(1).items(itemSale);
+const addOrderSchema = Joi.object({
+  productsIds: Joi.array().required().min(1).label('productsIds')
+    .messages({
+      'array.min': '"productsIds" must include only numbers',
+    }),
+});
 
 export default {
   addProductSchema,
   addUserSchema,
   addLoginSchema,
+  addOrderSchema,
 };
