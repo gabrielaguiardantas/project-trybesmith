@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import jwt from 'jsonwebtoken';
 import { NextFunction, Request, Response } from 'express';
 import UsersService from '../services/users.service';
@@ -22,9 +21,7 @@ const validateJWT = async (req: RequestWithUserRole, res: Response, next: NextFu
     const decoded = <Token>jwt.verify(token, secret);
     const user = (await userService
       .getAll()).find((userOb) => userOb.username === decoded.username);
-    if (!user) {
-      return res.status(401).json({ message: 'Erro ao procurar usuário do token.' });
-    }
+    if (!user) return res.status(401).json({ message: 'Erro ao procurar usuário do token.' });
     req.user = decoded;
     next();
   } catch (err) {
