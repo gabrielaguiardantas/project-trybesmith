@@ -11,3 +11,5 @@ Vigésimo terceiro projeto do curso de desenvolvimento Web da Trybe e sétimo pr
 - Arquitetura MSC
 
 ## Features implementadas: ##
+
+![features-project23](https://github.com/gabrielaguiardantas/project-trybesmith/assets/110852595/d63d21e2-7238-4680-bea7-4c8c1cfa184c)
